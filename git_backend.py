@@ -75,7 +75,7 @@ def create_checklist_record(record):
         "Comment": record.get("Comment", ""),
     }
     data["check"].append(new_record)
-    save_data("checkl ist.json", data)
+    save_data("check list.json", data)
     return new_record
 
 def update_checklist_record(record_id, updated_data):
