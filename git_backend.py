@@ -10,7 +10,12 @@ import io
 from io import BytesIO
 import git_backend as gb
 import os
+st.set_page_config(
+    layout="wide",
+    page_title='facility_w',
+    page_icon='🪙')
 
+egypt_tz = pytz.timezone('Africa/Cairo')
 # GitHub setup
 #g = Github(st.secrets["GITHUB_TOKEN"])
 #repo = g.get_repo(st.secrets["REPO_NAME"])
