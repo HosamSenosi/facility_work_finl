@@ -387,27 +387,27 @@ if page == 'Event Logging':
                     st.success(f"Event recorded successfully! '{category}'!")
                 else:
                     event_id = get_next_event_id()
-                    image_path = ""
-                    if uploaded_file is not None:
-                        try:
-                            image = Image.open(uploaded_file)
-                            if image.mode == "RGBA":
-                                image = image.convert("RGB")
-                            max_size = (800, 600)
-                            image.thumbnail(max_size)
-                            image_buffer = BytesIO()
-                            image.save(image_buffer, format="JPEG")
-                            image_data = image_buffer.getvalue()
-                            ext=uploaded_file.name.split('.')[-1]
-                            image_name = f"{event_id}.txt"
-                            image_path = gb.save_image(image_data, image_name)
-                            if image_path:
-                                st.success(f"Image saved successfully as {image_name}")
-                            else:
-                                st.error("Failed to save the image")
-                        except Exception as e:
-                            st.error(f"An error occurred while saving the image: {str(e)}")
-                            image_path = ""
+                image_path = ""
+                if uploaded_file is not None:
+                    try:
+                        image = Image.open(uploaded_file)
+                        if image.mode == "RGBA":
+                            image = image.convert("RGB")
+                        max_size = (800, 600)
+                        image.thumbnail(max_size)
+                        image_buffer = BytesIO()
+                        image.save(image_buffer, format="JPEG")
+                        image_data = image_buffer.getvalue()
+                        ext=uploaded_file.name.split('.')[-1]
+                        image_name = f"{event_id}.txt"
+                        image_path = gb.save_image(image_data, image_name)
+                        if image_path:
+                            st.success(f"Image saved successfully as {image_name}")
+                        else:
+                            st.error("Failed to save the image")
+                    except Exception as e:
+                        st.error(f"An error occurred while saving the image: {str(e)}")
+                        image_path = ""
                             
                     new_order = {
                         'id': event_id,
