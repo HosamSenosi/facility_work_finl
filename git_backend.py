@@ -295,7 +295,7 @@ def get_next_event_id():
     next_num = last_num + 1
     return f'Work Order {next_num}'
 
-page = st.sidebar.radio('Select page', ['Event Logging', 'Work Shop Order', 'View Change Log'])
+page = st.sidebar.radio('Select page', ['Event Logging', 'Work Shop Order', 'View Change Log','Clear data'])
 
 if page == 'Event Logging':
     work_order = load_check_list()
