@@ -66,7 +66,7 @@ def save_image(image_data, image_name):
 def create_checklist_record(record):
     data = load_data("check list.json")
     new_record = {
-        "id": record.get("id", str(len(data["records"]) + 1)),
+        "id": record.get("id", str(len(data["check"]) + 1)),
         "Location": record.get("Location", ""),
         "Element": record.get("Element", ""),
         "Detector Name": record.get("Detector Name", ""),
@@ -121,7 +121,7 @@ def update_work_order(work_id, updated_data):
 def create_completed_work_order(completed):
     data = load_data("completed work order.json")
     new_record = {
-        "id": completed.get("id", str(len(data["records"]) + 1)),
+        "id": completed.get("id", str(len(data["completed"]) + 1)),
         "location": completed.get("location", ""),
         "element": completed.get("element", ""),
         "Detector Name": completed.get("Detector Name", ""),
