@@ -425,7 +425,7 @@ if page == 'Event Logging':
                         'Quality related': 'Yes' if Quality_value else 'No'
                     }
                     
-                    gb.create_work_order(new_record)
+                    gb.create_work_order(new_order)
                     st.session_state.work_order_df = load_work_order()
                     st.success(f"Event recorded successfully! '{category}'!") 
     
