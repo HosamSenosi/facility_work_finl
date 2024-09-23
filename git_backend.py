@@ -17,8 +17,8 @@ st.set_page_config(
 
 egypt_tz = pytz.timezone('Africa/Cairo')
 # GitHub setup
-#g = Github(st.secrets["GITHUB_TOKEN"])
-#repo = g.get_repo(st.secrets["REPO_NAME"])
+g = Github(st.secrets["GITHUB_TOKEN"])
+repo = g.get_repo(st.secrets["REPO_NAME"])
 
 def load_data(file_path):
     if file_path not in ("check list.json", "change log.json",'work order records.json','completed work order.json'):
