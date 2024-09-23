@@ -460,8 +460,8 @@ if page == 'Event Logging':
                     label="Download Checklist as CSV",
                     data=csv_data,
                     file_name='checklist_records.csv',
-                    mime='text/csv'
-                )
+                    mime='text/csv',
+                   key='download_checklist')
         st.markdown("""
             <h2 style='text-align: center; font-size: 30px; color: #A52A2A;'>
                 Facility Maintenance:
@@ -480,8 +480,8 @@ if page == 'Event Logging':
                     label="Download Checklist as CSV",
                     data=csv_data,
                     file_name='checklist_records.csv',
-                    mime='text/csv'
-                )
+                    mime='text/csv',
+                   key='download_work_data')
 
         else:
             st.write("No checklist data available.")
