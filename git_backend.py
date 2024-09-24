@@ -386,7 +386,7 @@ if page == 'Event Logging':
                     st.session_state.check_list_df = load_check_list()
                     st.success(f"Event recorded successfully! '{category}'!")
                 else:
-                    event_id = get_next_event_id()
+                    event_id = 'work_order' + str(length + 1)
                 image_path = ""
                 if uploaded_file is not None:
                     try:
